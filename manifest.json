@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Steam Dolar Tarjeta",
+  "description": "Dolar Tarjeta en Steam, para ver cuanto te va a llegar a la tarjeta.",
+  "version": "1.0",
+  "permissions": [
+    "*://*.steampowered.com/",
+    "*://*.lanacion.com.ar/"
+  ],
+  "icons": { 
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*.steampowered.com/*",
+        "https://*.steampowered.com/*",
+        "http://steamcommunity.com/*"
+      ],
+      "exclude_matches": [
+        "https://store.steampowered.com/checkout/*",
+        "https://store.steampowered.com/login/*",
+        "https://store.steampowered.com/join/*",
+        "https://steamcommunity.com/login/*"
+      ],
+      "js": [
+        "jquery-1.11.2.min.js",
+        "dolar-tarjeta.js"
+      ]
+    }
+  ]
+}
